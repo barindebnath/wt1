@@ -1,0 +1,105 @@
+<head>
+   <!--Bootstrap 4-->   
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <!-- jQuery library -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <!-- Popper JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+   <!-- Latest compiled JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   <!--Google Font-->
+   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+   <!--coustome css-->
+   <link rel="stylesheet" type="text/css" href="../../../asset/style1.css">
+</head>
+<body >
+   <pre class="p-3 mb-0 sr-dk bg-dk" style="height: 100%;"><code class="text-dark" style="font-family: 'Roboto', sans-serif;">&lt;html ng-app="billpayApp"&gt;
+&lt;!-- SCRIPTS TO BE ADDED IN HEAD TAG --&gt;
+&lt;head&gt;
+   &lt;title&gt;Bill Payment Record using angular and bootstraps framework&lt;/title&gt;
+   &lt;meta http-equiv="content-type" content="text/html; charset=utf-8" /&gt;
+   &lt;!-- ACCESSING ANGULARJS BY CDN METHOD--&gt;
+   &lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"&gt;&lt;/script&gt;
+   &lt;!-- ACCESSING STYLESHEET FOR DESIGN [OPTIONAL PART CAN BE SKIP]--&gt;
+   &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
+   &lt;!-- MODEL PART--&gt;
+   &lt;script&gt;
+      var model = {customer: "Student",items: [
+         {bill: "Electricity",status: false},
+         {bill: "Internet(Wi/fi)",status: false},
+         {bill: "Parking Charges",status: false},
+         {bill: "Phone",status: true},
+         {bill: "House Tax",status: true}
+      ]}
+      var billpayApp = angular.module("billpayApp", []);
+      billpayApp.controller("billpayctrl", function($scope) {
+         $scope.billpay = model;
+         $scope.dueBills = function() {
+            var items = $scope.billpay.items;
+            var counter = 0;
+            items.forEach((item) =&gt; {
+               if (!item.status) {
+                  counter++;
+               }
+            })
+            return counter;
+         }
+         $scope.redFlag = function() {
+            return $scope.dueBills() &lt;= 2 ? "label-success" : "label-danger";
+         }
+         $scope.addBills = function(billName) {
+            obj = { bill: billName,status: false}
+            $scope.billpay.items.push(obj)
+         ;}
+         $scope.removeBills = function(rmvBills) {
+            $scope.billpay.items.splice(
+               $scope.billpay.items.indexOf(rmvBills),1
+            )
+         ;}
+      });
+   &lt;/script&gt;
+&lt;/head&gt;
+&lt;!-- HTML BODY PART--&gt;
+&lt;body ng-controller="billpayctrl" style="background-color: #f8d7da"&gt;
+   &lt;div class="container"&gt;
+      &lt;div class="page-header"&gt;
+         &lt;h1&gt;{{billpay.customer}}'s Bill's remained to Be Paid -
+            &lt;span class="lable" ng-class="redFlag()" ng-hide="dueBills()==0"&gt;{{dueBills()}}&lt;/span&gt;
+         &lt;/h1&gt;
+      &lt;/div&gt;
+      &lt;h3&gt;&lt;center&gt;&lt;b&gt;Add extra biller fields if any&lt;/center&gt;&lt;/b&gt;&lt;/h3&gt;
+      &lt;div class="panel"&gt;
+         &lt;div class="input-group"&gt;
+            &lt;input class="form-control" ng-model="billName" /&gt;
+            &lt;span class="input-group-btn"&gt;
+               &lt;button class="btn btn-danger" ng-click="addBills(billName)"&gt;+&lt;/button&gt;
+            &lt;/span&gt;
+         &lt;/div&gt;
+         &lt;table class="table table-striped"&gt;
+            &lt;thead&gt;
+               &lt;tr&gt;
+                  &lt;th&gt;Bill Name&lt;/th&gt;
+                  &lt;th&gt;Status&lt;/th&gt;
+                  &lt;th&gt;Status&lt;/th&gt;
+                  &lt;th&gt;Close&lt;/th&gt;
+               &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody ng-model="rmvBills"&gt;
+               &lt;tr ng-repeat="item in billpay.items" ng-model="item"&gt;
+                  &lt;td&gt;{{item.bill}}&lt;/td&gt;
+                  &lt;td&gt;&lt;input type="checkbox" ng-model="item.status" /&gt;&lt;/td&gt;
+                  &lt;td&gt;{{item.status}}&lt;/td&gt;
+                  &lt;td&gt;
+                     &lt;button type="button" ng-click="removeBills(item)"&gt; &amptimes; &lt;/button&gt;
+                  &lt;/td&gt;
+               &lt;/tr&gt;
+            &lt;/tbody&gt;
+         &lt;/table&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</body>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="student.xsl"?>
+
+<class>
+	<Student rollno="01">
+		<firstname>Aishwary</firstname>
+		<lastname>Atakari</lastname>
+	</Student>
+
+	<Student rollno="02">
+		<firstname>Atharva</firstname>
+		<lastname>Atakari</lastname>
+	</Student>
+
+	<Student rollno="03">
+		<firstname>Kaustubh</firstname>
+		<lastname>Atakari</lastname>
+	</Student>
+
+	<Student rollno="04">
+		<firstname>Vedant</firstname>
+		<lastname>Atakari</lastname>
+	</Student>
+
+</class>

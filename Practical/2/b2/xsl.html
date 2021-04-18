@@ -1,0 +1,43 @@
+<head>
+   <!--Bootstrap 4-->   
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <!-- jQuery library -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <!-- Popper JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+   <!-- Latest compiled JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   <!--Google Font-->
+   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+   <!--coustome css-->
+   <link rel="stylesheet" type="text/css" href="../../../asset/style1.css">
+</head>
+<body >
+   <pre class="p-3 mb-0 sr-p bg-p" style="height: 100%;"><code class="text-primary" style="font-family: 'Roboto', sans-serif;">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+   &lt;xsl:template match="/"&gt;
+      &lt;html&gt;
+         &lt;body&gt;
+            &lt;h2&gt;Student&lt;/h2&gt;
+            &lt;table border="1"&gt;
+               &lt;tr color="red"&gt;
+                  &lt;th&gt;ROLLNO&lt;/th&gt;
+                  &lt;th&gt;FIRSTNAME&lt;/th&gt;
+                  &lt;th&gt;LASTNAME&lt;/th&gt;
+               &lt;/tr&gt;
+               &lt;xsl:for-each select="class/Student"&gt;
+                  &lt;tr&gt;
+                     &lt;td&gt;&lt;xsl:value-of select="@rollno"/&gt;&lt;/td&gt;
+                     &lt;td&gt;&lt;xsl:value-of select="firstname"/&gt;&lt;/td&gt;
+                     &lt;td&gt;&lt;xsl:value-of select="lastname"/&gt;&lt;/td&gt;
+                  &lt;/tr&gt;
+               &lt;/xsl:for-each&gt;
+            &lt;/table&gt;
+         &lt;/body&gt;
+      &lt;/html&gt;
+   &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</code></pre>
+</body>

@@ -1,0 +1,51 @@
+<head>
+   <!--Bootstrap 4-->   
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <!-- jQuery library -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <!-- Popper JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+   <!-- Latest compiled JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   <!--Google Font-->
+   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+   <!--coustome css-->
+   <link rel="stylesheet" type="text/css" href="../../../asset/style1.css">
+</head>
+<body >
+   <pre class="p-3 mb-0 sr-p bg-p" style="height: 100%;"><code class="text-primary" style="font-family: 'Roboto', sans-serif;">&lt;head&gt;
+  &lt;style&gt;table{border-style:solid;border-width:2px;margin: 20px auto;}&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body bgcolor="#f8d7da"&gt;
+  &lt;a href="reg.html"&gt;Add New Data&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;
+  &lt;?php
+  $con = mysql_connect("localhost","username","password");
+  if (!$con)
+    {
+    die('Could not connect: ' . mysql_error());
+    }
+  mysql_select_db("database_name", $con);
+   $result = mysql_query("SELECT * FROM table_name");
+   echo "&lt;table border='1'&gt;
+  &lt;tr&gt;
+  &lt;th&gt;NAME&lt;/th&gt;
+  &lt;th&gt;AGE&lt;/th&gt;
+  &lt;th&gt;CITY&lt;/th&gt;
+  &lt;/tr&gt;";
+   while($row = mysql_fetch_array($result))
+    {
+    echo "&lt;tr&gt;";
+    echo "&lt;td&gt;" . $row['name'] . "&lt;/td&gt;";
+    echo "&lt;td&gt;" . $row['age'] . "&lt;/td&gt;";
+    echo "&lt;td&gt;" . $row['city'] . "&lt;/td&gt;";
+    echo "&lt;/tr&gt;";
+    }
+  echo "&lt;/table&gt;";
+   mysql_close($con);
+  ?&gt;
+&lt;/body&gt;</code></pre>
+</body>

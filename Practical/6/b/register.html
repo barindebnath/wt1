@@ -1,0 +1,67 @@
+<head>
+   <!--Bootstrap 4-->   
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <!-- jQuery library -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <!-- Popper JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+   <!-- Latest compiled JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   <!--Google Font-->
+   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+   <!--coustome css-->
+   <link rel="stylesheet" type="text/css" href="../../../asset/style1.css">
+</head>
+<body >
+   <pre class="p-3 mb-0 sr-s bg-s" style="height: 100%;"><code class="text-success" style="font-family: 'Roboto', sans-serif;">&lt;head&gt;
+   &lt;title&gt;PHP Databse Example with Ajax&lt;/title&gt;
+   &lt;script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"&gt;
+   &lt;/script&gt;
+   &lt;style&gt;
+      div,p,h1{text-align: center;}
+      form{margin: 20px auto; border: solid; padding: 20px; max-width: 300px; right: 50%;}
+      div{padding: 10px; border:solid; margin: 10px auto; max-width: 100px;}
+      input,label{text-align:left; margin-top: 20px;}
+   &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body bgcolor="#f8d7da"&gt;
+   &lt;h1&gt; Enter Employee Details &lt;/h1&gt;
+   &lt;form method="post" action="insert.php"&gt;
+      &lt;input type="text" id="name" name="name" placeholder="Enter Name" /&gt;
+      &lt;input type="text" id="age" name="age" placeholder="Enter Age" /&gt;
+      &lt;input type="text" id="city" name="city" placeholder="Enter City" /&gt;&lt;br&gt;
+      &lt;button&gt; Save Data &lt;/button&gt;
+   &lt;/form&gt;
+   &lt;p id="result"&gt;&lt;/p&gt;
+   &lt;div&gt;&lt;a href="disp.php"&gt;Display&lt;/a&gt;&lt;/div&gt;
+   &lt;!--jquery and ajax code--&gt;
+   &lt;script&gt;
+      $("form").submit(function(e){
+         e.preventDefault();
+         $.post(
+            "insert.php",
+            {
+               name: $("#name").val(),
+               age: $("#age").val(),
+               city: $("#city").val()
+            },
+            function(result)
+            {
+               if(result == "success")
+               {
+                  $("#result").html("Data Inserted Successfully..!");
+               }
+               else
+               {
+                  $("#result").html("Error Occured!");
+               }
+            }
+         );
+      });
+   &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+</body>

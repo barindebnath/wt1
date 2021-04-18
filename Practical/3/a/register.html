@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>regform</title>
+	<link href="samp.css" rel="stylesheet"></link>
+	<script type="text/javascript">
+		function Validation(){
+			var emailID = document.myForm.EMail.value;
+			var num=document.myForm.ph.value;
+			atpos = emailID.indexOf("@"); 
+			dotpos = emailID.lastIndexOf(".");
+			if (atpos< 1 || ( dotpos - atpos< 2 )){
+				alert("Please enter correct email ID")
+				document.myForm.EMail.focus() ;
+				return false;
+			}
+			else if (isNaN(num)){
+				document.getElementById("ph");
+				alert("Please enter numeric only.")
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
+	</script>
+</head>
+
+<body style="font-family: arial; background-color: #f8d7da;">
+	<form name="myForm" action="log.html" method="get" align="center" style="margin: auto; font-size: 2rem">
+		<h4 align="center">Registration Page</h4>
+		<table align="center" style="font-weight: bold; border: none;">
+			<tr>
+				<td>Full Name:</td>
+				<td><input type="text" id="FirstName" required></input></td>
+			</tr>
+			<tr>
+				<td>Class:</td>
+				<td><input type="text" id="Class" required></input></td>
+			</tr>
+			<tr>
+				<td>Department:</td>
+				<td><input type="text" id="Department" required></input></td>
+			</tr>
+			<tr> 
+				<td>Address:</td>
+				<td><textarea row="3" column="2" required></textarea></td>
+			</tr>
+			<tr>
+				<td>Email-Id:</td>
+				<td><input type="text" id="EMail" required></input></td>
+			</tr>
+			<tr>
+				<td ><br>Mobile No:</td>
+				<td><input type="text" value="" id="mob" pattern="[0-9]{10}" placeholder="Enter 10Digit No"required></input></td>
+			</tr>
+		</table>
+		<table align="center">
+			<td>
+				<input type="submit" value="SUBMIT" onclick="return (Validation());" style="font-weight: bold; padding: 10px 20px; border: none;background-color:#00cc66">
+			</td>
+			<td>
+				<input type="reset" value="CANCEL" style="font-weight: bold; padding: 10px 20px; border: none;background-color:#ff1a1a">
+			</td>
+		</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+CATALOG{
+	font-family: arial;
+	background-color: #f8d7da;
+}
+BOOK,TITLE,AUTHOR,YEAR,PRICE{
+	display: block;
+}
+BOOK {
+	margin:0 20px;
+}
+TITLE {
+	padding: 5px;
+	font-size: 20pt;
+}
+AUTHOR,YEAR,PRICE{
+	margin-left: 20px;
+	font-size: 15pt;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style type="text/css">.box{max-width: 400px !important; }</style>
+		<title>Login</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container shadow p-3 bg-white rounded-lg box mt-5 border-bottom border-top border-info">
+			<form action="logged_in.html">
+				<div class="header">
+					<h5 class="title text-primary text-center">Login</h5>
+				</div>
+				<div class="container text-secondary">
+					<label class="mt-2 font-weight-bold">Email address</label>
+					<div class="input-group">     
+						<div class="input-group-prepend">
+							<span class="input-group-text rounded-circle text-secondary"><i class="fa fa-user" ></i></span>
+						</div>
+						<input type="email" class="form-control rounded-pill" placeholder="name@example.com" required>
+					</div>
+					<label class="mt-2 font-weight-bold">Password</label>
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text rounded-circle text-secondary"><i class="fa fa-lock" ></i></span>
+						</div>
+						<input type="password" class="form-control rounded-pill" placeholder="Password" minlength="8" required>
+					</div>
+				</div>
+				<div>
+					<button type="submit" class="btn mt-3 btn-success rounded-pill float-right">Submit</button>
+					<a href="forgot_pass.html" class="btn mt-3 btn-danger rounded-pill" role="button">Forgot Password?</a>
+				</div>
+			</form>
+			<div class = "alert alert-primary mt-3 mb-1 text-center p-2">Don't have an account? <a href="register.html" class = "alert-link">Sign up</a></div>
+		</div>
+	</body>
+</html>

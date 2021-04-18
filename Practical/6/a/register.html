@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PHP Databse Example with Ajax</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+crossorigin="anonymous">
+	</script>
+	<style>
+		div,p,h1{text-align: center;}
+		form{margin: 20px auto; border: solid; padding: 20px; max-width: 300px; right: 50%;}
+		div{padding: 10px; border:solid; margin: 10px auto; max-width: 100px;}
+		input,label{text-align:left; margin-top: 20px;}
+	</style>
+</head>
+
+<body bgcolor="#f8d7da">
+	<h1> Enter Employee Details </h1>
+	<form method="post" action="insert.php">
+		<input type="text" id="name" name="name" placeholder="Enter Name" />
+		<input type="text" id="age" name="age" placeholder="Enter Age" />
+		<input type="text" id="city" name="city" placeholder="Enter City" /><br>
+		<button> Save Data </button>
+	</form>
+	<p id="result"></p>
+	<div><a href="display.php">Display</a></div>
+	<!--jquery and ajax code-->
+	<script>
+		$("form").submit(function(e){
+			e.preventDefault();
+			$.post(
+				"insert.php",
+				{
+					name: $("#name").val(),
+					age: $("#age").val(),
+					city: $("#city").val()
+				},
+				function(result)
+				{
+					if(result == "success")
+					{
+						$("#result").html("Data Inserted Successfully..!");
+					}
+					else
+					{
+						$("#result").html("Error Occured!");
+					}
+				}
+			);
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-light">
+	<div class="container mt-3 p-2 bg-light rounded-lg border" style="max-width: 500px !important;">
+		<form action="login.html">
+			<div class="header">
+				<h4 class="title text-primary text-center p-2">Create Account</h4>
+			</div>
+			<div class="container">
+				<table class="table table-bordered table-info ">
+					<caption>All fields are mandatory</caption>
+					<tr>
+						<th>Full Name</th>
+						<td><input type="text" class="form-control rounded-pill" placeholder="eg: Barin Debnath" maxlength="15" required /></td>
+					</tr>
+					<tr>
+						<th><label>Email ID</label></th>
+						<td><input type="email" class="form-control rounded-pill" placeholder="Enter your Email" maxlength="50" required></td>
+					</tr>
+					<tr>
+						<th><label>Password</label></th>
+						<td><input type="password" class="form-control rounded-pill" placeholder="Create Password" minlength="8" required></td>
+					</tr>
+					<tr>
+						<th>Mobile Number</th>
+						<td>
+							<input type="tel" class="form-control rounded-pill" pattern="^\d{10}$" placeholder="10 digit number" maxlength="10" minlength="10" required />
+						</td>
+					</tr>
+					<tr>
+						<th>Gender</th>
+						<td>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="Gender">
+								<label class="form-check-label" >Male</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="Gender">
+								<label class="form-check-label" >Female</label>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<button type="submit" class="btn btn-success rounded-pill float-right">Submit</button>
+				<input type="Reset" class="btn btn-danger rounded-pill"></input>
+			</div>
+		</form>
+		<div class = "alert alert-primary mt-3 text-center p-2">Already have an account? <a href="login.html" class = "alert-link">Sign in</a></div>
+	</div>
+</body>
+</html>
