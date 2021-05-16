@@ -1,6 +1,7 @@
 https://barindebnath.github.io/wt1/
 
-# 8 Lab practicals for students and teachers of B.E. Computer. (Third Year -> Second Semester -> Web Technologies)
+# 8 Lab practicals for students and teachers of B.E. Computer. 
+### (Third Year -> Second Semester -> Web Technologies)
 
 Assignment 1: Design registration form for students by using HTML, CSS.
 
